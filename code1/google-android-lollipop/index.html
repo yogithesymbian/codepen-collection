@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Google Android Lollipop</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <!--<div id="presentation" >
+  <div id="block">
+    <h1>Google Android Lollipop</h1>
+    <h3>Nexus 5 Lockscreen</h3>
+    <p class="name">Simone Bernabè Pen</p>
+  </div>
+</div>-->
+
+<div id="page">
+<div id="container">
+  <div class="lock-button" onclick="lock()">Lock</div>
+  <div class="volumeup" onclick="volumeup()">+</div>
+  <div class="volumedown" onclick="volumedown()">-</div>
+  <div id="screen" onclick="bounce()">
+    <div id="container-volume">
+      <i class="material-icons ring">volume_up</i>
+      <input type="range" id="myRange" value="0" min="0" max="10">
+    </div>
+    <div id="lockscreen">
+      <div id="glass-effect"></div>
+      <div id="banner">
+        <p class="carrier">vodafone IT</p>
+        <div class="wifi"></div>
+        <div class="phone-icon"></div>
+        <div class="battery"></div>
+        <img class="profile" src="https://lh3.googleusercontent.com/-X-aQXHatDQY/Uy86XLOyEdI/AAAAAAAAAF0/TBEZvkCnLVE/w140-h140-p/fb3a11ae-1fb4-4c31-b2b9-bf0cfa835c27" />
+      </div>
+     <div id="cont"> 
+        <p class="time" id="time-lockscreen"></p>
+        <p id="date"></p>
+      </div>
+      
+      <p id="unlock">Swipe up to unlock</p>
+      
+      <i class="material-icons phone" id="dialer" onclick="phone()">phone</i>
+      <span class="white-select-left"></span>
+      <span class="lock"></span>
+      <i class="material-icons camera" onclick="camera()" id="camera">photo_camera</i>
+      <span class="white-select"></span>
+    </div>
+    
+    <!--  Launcher Page  -->
+    
+    <div id="launcher">
+      <div id="slide-in">
+        <div id="banner">
+          <div class="wifi main-banner"></div>
+          <div class="phone-icon main-banner"></div>
+          <div class="battery main-banner"></div>
+          <p id="time"></p>
+        </div>
+        <div id="drawer">
+            <span class="drawer-z" onclick="drawer()"></span>
+        </div>
+        <div id="drawer-bar">
+          <span class="drawer-icon" ></span>
+        </div>
+        <div id="navigation-bar">
+          <span class="back"></span>
+          <span class="home" onclick="home()"></span>
+          <span class="recent"></span>
+        </div>
+      </div>
+    </div>
+     
+    <!--  Camera Page  -->
+    
+    <div></div>
+    
+    <!--  Dialer Page  -->
+    
+    <div></div>
+    
+    
+  </div>
+</div>
+  
+  
+  <div id="container-guide">
+    <div class="box-guide lime first">
+      <div class="head-box">
+        <i class="material-icons icon-guide first">keyboard_arrow_left</i>
+      </div>
+      <h2 class="title-box">Swipe Left</h2>
+      <p class="desc-box">Access to the Camera</p>
+    </div>
+    <div class="box-guide green first">
+      <div class="head-box">
+        <i class="material-icons icon-guide">keyboard_arrow_right</i>
+      </div>
+      <h2 class="title-box">Swipe Right</h2>
+      <p class="desc-box">Access to the Dialer</p>
+    </div>
+    <div class="box-guide blue first">
+      <div class="head-box">
+        <i class="material-icons icon-guide">open_in_browser</i>
+      </div>
+      <h2 class="title-box">Swipe Up</h2>
+      <p class="desc-box">Unlock the phone. JQ indipendent script.</p>
+    </div>
+    
+    <div class="box-guide red other">
+      <div class="head-box">
+        <i class="material-icons icon-guide">cached</i>
+      </div>
+      <h2 class="title-box">CSS3 re-start</h2>
+      <p class="desc-box">JS Script to Re-start CCS Animation</p>
+    </div>
+    <div class="box-guide amber other">
+      <div class="head-box">
+        <i class="material-icons icon-guide">query_builder</i>
+      </div>
+      <h2 class="title-box">Current Time</h2>
+      <p class="desc-box">JS Script for local time & date</p>
+    </div>
+    <div class="box-guide cyan other">
+      <div class="head-box">
+        <i class="material-icons icon-guide">edit</i>
+      </div>
+      <h2 class="title-box">CSS Icon</h2>
+      <p class="desc-box">Most of the icon made in CSS3</p>
+    </div>
+  </div>
+</div>
+
+<div id="info"><p class="firma"><a href="https://codepen.io/collection/XyrMQr/" target="_blank"> Check Out my Collection</a></p></div>
+
+
+<!-- PROFILE CARD  -->
+
+<div id="container-floating">  
+  <a href="https://plus.google.com/105749628523180076386/posts" target="_blank"><span class="profile-name">Simone</span></a>
+  <div id="container-a">
+    <div id="badge">
+    </div>
+    <div id="letter">
+      <a href="https://plus.google.com/105749628523180076386/posts"><span>S</span></a>
+    </div>  
+  </div>
+
+  <a href="https://codepen.io/collection/XyrMQr/" target="_blank"><div class="nds nd1" data-toggle="tooltip" data-placement="left" data-original-title="Codepen"></div></a>
+  <a href="  https://twitter.com/simoberny" target="_blank"><div class="nds nd3" data-toggle="tooltip" data-placement="left" data-original-title="Twitter"></div></a>
+ <a href="https://plus.google.com/105749628523180076386/posts" target="_blank"><div class="nds nd4" data-toggle="tooltip" data-placement="left" data-original-title="G+"></div></a>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

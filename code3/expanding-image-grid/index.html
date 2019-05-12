@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Expanding Image Grid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+		
+      <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+	<div class="background-v1">
+
+	<div>
+		<img class="byMe" src="img/scodeid.jpg" alt="created by me">
+		<h1 class="entry-title" style="background-color: rgba(0, 0, 0, 0.233) ;color: white; text-align: center; font-size: 30px; border: 2px solid white" >Lab Exercise Week 2</h1>
+	</div>
+  <div class="expanding-grid">
+	
+	<ul class="links">
+		<li><a href="#section1">(1.1) Study help AUTO INCREMENT</a></li>
+		<li><a href="#section2">(1.1) Study auto increment on primarykey.sql</a></li>
+		<li><a href="#section3">(1.1) Execute auto increment on primarykey.sql</a></li>
+		<li><a href="#section4">(1.2) Unique Key</a></li>
+		<li><a href="#section5">(1.2) Unique Key Import.sql</a></li>
+		<li><a href="#section6">(1.3) ADDING INDEX constraint (when creating a table)</a></li>
+		<li><a href="#section7">(1.3) Import Index.sql Source</a></li>
+		<li><a href="#section8">(1.4) Study CREATE INDEX</a></li>
+		<li><a href="#section9">(1.4) ADDING INDEX constraint (to an existing table)</a></li>
+		<li><a href="#section10">(1.5) Dropping INDEX constraint from an existing table</a></li>
+		<li><a href="#section11">(2.1) Table Modifier</a></li>
+		<li><a href="#section12">(3.1) WHERE clause options</a></li>
+		<li><a href="#section13">(4.1) GROUP BY and HAVING</a></li>
+		<li><a href="#section14">(5.1) User-defined variables</a></li>
+	</ul>
+
+	<div id="section1" class="expanding-container">
+		<article class="hentry">
+			<h1 class="entry-title">	help AUTO_INCREMENT;</h1>
+			<div class="entry-image"><div class="img-placeholder"> 
+				<img class="zoom" src="img/help-auto-increment.PNG" alt="img-help-autoincrement" style="max-width: 100%" > 
+			</div></div>
+			<br>
+			<p>
+				<span style="text-shadow: white 1px 1px" >mysql > help AUTO_INCREMENT;</span>
+<pre>
+AUTO_INCREMENT
+
+
+		The AUTO_INCREMENT attribute can be used to generate a unique identity
+		for new rows:
+		
+		URL: http://dev.mysql.com/doc/refman/5.6/en/example-auto-increment.html
+		
+
+CREATE TABLE animals (
+		id MEDIUMINT NOT NULL AUTO_INCREMENT,
+		name CHAR(30) NOT NULL,
+		PRIMARY KEY (id)
+);
+
+INSERT INTO animals (name) VALUES
+	 ('dog'),('cat'),('penguin'),
+	 ('lax'),('whale'),('ostrich');
+
+SELECT * FROM animals;
+</pre>
+
+			</p>
+		</article>
+	</div>
+	<!-- <img class="zoom" src="img/1. Study auto_increment_on_primarykey.sql.png" alt="img-help-autoincrement" style="max-width: 100%" > -->
+	<div id="section2" class="expanding-container">
+		<article class="hentry">
+			<h1 class="entry-title">auto_increment_on_primarykey.sql</h1>
+			<div class="entry-image"><div class="img-placeholder"> 
+				<a href="img/1. Study auto_increment_on_primarykey.sql.png"><img class="zoom" src="img/1. Study auto_increment_on_primarykey.sql.png" alt="img-help-autoincrement" style="max-width: 100%" > </a>
+			</div></div>
+			<br>
+			<p>
+				trying insert with value id ( primary ) and without value for testing an increment works.
+			</p>
+			<pre>
+					/* Data for the table employees - providing employee_id explicitly  */
+					INSERT INTO employees(employee_id, name, salary)
+					VALUES
+					(1,'jack','3000.00'),
+					(2,'mary','2500.00'),
+					(3,'nichole','4000.00');
+					
+			/* Data for the table employees - using AUTO_INCREMENT */
+					INSERT INTO employees(name, salary)
+					VALUES
+					('angie','5000.00'),
+					('jones','5000.00');
+			</pre>
+		</article>
+	</div>
+
+	<div id="section3" class="expanding-container">
+		<article class="hentry">
+			<h1 class="entry-title">2. Execute auto_increment_on_primarykey.sql. | import file.sql</h1>
+			<div class="entry-image"><div class="img-placeholder">
+			<a href="img/2. Execute auto_increment_on_primarykey.sql.PNG">	
+				<img class="zoom" src="img/2. Execute auto_increment_on_primarykey.sql.PNG" alt="img" style="max-width: 100%">
+			</a>
+			</div></div>
+<hr>
+
+			<p>
+					With xampp I think you need to use the full path at the command line, something like this, perhaps:
+					<br>
+<pre>
+		C:\xampp\mysql\bin\mysql -u {username} -p {databasename} < file_name.sql
+</pre>
+			</p>
+<hr>
+			<p>
+				<pre>
+Don't use "source", it's designed to run a small number of sql queries and display the output, not to import large databases.
+I use Wamp Developer (not XAMPP) but it should be the same.
+						
+What you want to do is use the MySQL Client to do the work for you.
+						
+1. Make sure MySQL is running.
+2. Create your database via phpMyAdmin or the MySQL shell.
+3. Then, run cmd.exe, and change to the directory your sql file is located in.
+4. Execute: mysql -u root -p database_name_here < dump_file_name_here.sql
+5. Substitute in your database name and dump file name.
+6. Enter your MySQL root account password when prompted 
+   (if no password set, remove the "-p" switch).
+7. This assumes that mysql.exe can be located via the environmental path, 
+	 and that sql file is located in the directory you are running this from. 
+	 Otherwise, use full paths.
+				</pre>
+			</p>
+			<hr>
+			<p>
+				OR
+				<pre>
+						USE yourdb;
+
+						SOURCE D:/My Folder with spaces/Folder/filetoimport.sql
+				</pre>					
+			</p>
+		</article>
+	</div>
+
+	<div id="section4" class="expanding-container">
+		<article class="hentry">
+			<h1 class="entry-title">Unique Key</h1>
+			<div class="entry-image"><div class="img-placeholder">
+					<a href="img/2. unique.sql.PNG"><img class="zoom" src="img/2. unique.sql.PNG" alt="img-help-autoincrement" style="max-width: 100%" ></a>
+			</div></div>
+			<p>
+				karena menggunakan key UNIQUE maka data yang sama tidak dapat di inputkan
+			</p>
+		</article>
+	</div>
+
+	<div id="section5" class="expanding-container">
+		<article class="hentry">
+			<h1 class="entry-title">(1.2) Unique Key Import</h1>
+			<div class="entry-image"><div class="img-placeholder">Like as step 2</div></div>
+			<br>
+
+			<p>
+				hasilnya tidak bisa di import ( sama seperti pada step 1.2 Unique Key )
+				<br>
+				untuk langkahnya menggunakan source seperti pada step 2 yaitu Execute auto_increment_on_primarykey.sql. 
+			</p>
+		</article>
+	</div>
+
+	<div id="section6" class="expanding-container">
+		<article class="hentry">
+			<h1 class="entry-title">1.3 Index.sql</h1>
+			<div class="entry-image"><div class="img-placeholder">
+				<a href="img/3. index.sql.PNG">
+					<img class="zoom" src="img/3. index.sql.PNG" alt="img-help-autoincrement" style="max-width: 100%" >
+				</a>
+			</div></div>
+			<p>
+				An index is a separate file that is sorted, and contains only the field/s you're interested in sorting on.
+			</p>
+		</article>
+	</div>
+
+	<div id="section7" class="expanding-container">
+		<article class="hentry">
+			<h1 class="entry-title">SOURCE USAGE</h1>
+			<div class="entry-image"><div class="img-placeholder">
+				<a href="img/3. source index.sql.PNG">
+					<img class="zoom" src="img/3. source index.sql.PNG" alt="img-help-autoincrement" style="max-width: 100%" >
+				</a>
+			</div></div>
+			<p>
+					An index is a separate file that is sorted, and contains only the field/s you're interested in sorting on.
+			</p>
+		</article>
+	</div>
+
+	<div id="section8" class="expanding-container">
+		<article class="hentry">
+			<h1 class="entry-title">(1.4)  Adding INDEX constraint to an existing table && Study CREATE INDEX</h1>
+			<div class="entry-image"><div class="img-placeholder">
+				<a href="img/help-create-index.PNG">
+					<img class="zoom" src="img/help-create-index.PNG" alt="img" style="max-width: 100%" >
+				</a>
+			</div></div>
+			<p>
+					<span style="text-shadow: white 1px 1px" >mysql > help CREATE_INDEX;</span>
+				<pre>
+						CREATE INDEX
+
+						Syntax:
+						CREATE [UNIQUE|FULLTEXT|SPATIAL] INDEX index_name
+								[index_type]
+								ON tbl_name (index_col_name,...)
+								[algorithm_option | lock_option] ...
+						
+						index_col_name:
+								col_name [(length)] [ASC | DESC]
+						
+						index_type:
+								USING {BTREE | HASH}
+						
+						index_option:
+								KEY_BLOCK_SIZE [=] value
+							| index_type
+							| WITH PARSER parser_name
+							| COMMENT 'string'
+						
+						algorithm_option:
+								ALGORITHM [=] {DEFAULT|INPLACE|COPY}
+						
+						lock_option:
+								LOCK [=] {DEFAULT|NONE|SHARED|EXCLUSIVE}
+						
+						CREATE INDEX is mapped to an ALTER TABLE statement to create indexes.
+						See [HELP ALTER TABLE]. CREATE INDEX cannot be used to create a PRIMARY
+						KEY; use ALTER TABLE instead. For more information about indexes, see
+						http://dev.mysql.com/doc/refman/5.6/en/mysql-indexes.html.
+						
+						URL: http://dev.mysql.com/doc/refman/5.6/en/create-index.html
+						
+						
+				</pre>
+			</p>
+			<p>
+					Indexing is the most important tool you have for speeding up queries. Other techniques are available to you, too, but generally the one thing that makes the most difference is the proper use of indexes.
+
+					Let's consider how an index works by beginning with a table that has no indexes. An unindexed table is simply an unordered collection of rows. For example, Figure 4.1 shows the table that was discussed in Chapter 1, "Getting Started with MySQL and SQL." There are no indexes on this table, so to find the rows for a particular company, it's necessary to examine each row in the table to see if it matches the desired value. This involves a full table scan, which is slow, as well as tremendously inefficient if the table is large but contains only a few records that match the search criteria.
+			</p>
+		</article>
+	</div>
+	
+	<div id="section9" class="expanding-container">
+		<article class="hentry">
+			<h1 class="entry-title">Create Index</h1>
+			<div class="entry-image"><div class="img-placeholder">
+					<a href="img/4. perform create index.PNG">
+						<img class="zoom" src="img/4. perform create index.PNG" alt="img-help-autoincrement" style="max-width: 100%" >
+					</a>
+			</div></div>
+			<p>
+				No Description <br>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet ducimus quibusdam temporibus alias harum libero neque hic illum ab, est voluptates incidunt laudantium? Enim soluta asperiores veniam quod corporis? Similique.
+			</p>
+		</article>
+	</div>
+
+	<div id="section10" class="expanding-container">
+		<article class="hentry">
+			<h1 class="entry-title">Dropping INDEX constraint from an existing table</h1>
+			<div class="entry-image"><div class="img-placeholder">
+					<a href="img/4. dropping create index.PNG">
+						<img class="zoom" src="img/4. dropping create index.PNG" alt="img-help-autoincrement" style="max-width: 100%" >
+					</a>
+			</div></div>
+			<p>Description. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati veniam aliquam eos eius blanditiis, facilis minus quod nostrum. Dolores recusandae doloremque quam consequatur consequuntur accusantium quos possimus inventore ratione reiciendis!</p>
+		</article>
+	</div>
+
+	<div id="section11" class="expanding-container">
+		<article class="hentry">
+			<h1 class="entry-title">Exercise 2: Table modifiers - Storage engine</h1>
+			<div class="entry-image"><div class="img-placeholder">
+					<a href="img/2. show engines.PNG">
+						<img class="zoom" src="img/2. show engines.PNG" alt="img-help-autoincrement" style="max-width: 100%" >
+					</a>
+			</div></div>
+			<div class="entry-image"><div class="img-placeholder">
+					<a href="img/2.1 engine create.PNG">
+						<img id="img-r" class="zoom" src="img/2.1 engine create.PNG" alt="img-help-autoincrement" style="max-width: 100%" >
+					</a>
+			</div></div>
+			<br>
+			<p>
+				<pre>
+			mysql > show ENGINES
+			mysql > show ENGINES\G
+				</pre>
+				<hr>
+				<br>
+				<pre>
+			mysql > CREATE TABLE table_inno (id int) ENGINE = InnoDB;
+			mysql > CREATE TABLE table_MyISAM (id int) ENGINE = MyISAM;
+			mysql > CREATE TABLE table_default (id int);			
+				</pre>
+				<a href="#img-r">show-result-image-table-create</a>
+			</p>
+		</article>
+	</div>
+
+	<div id="section12" class="expanding-container">
+		<article class="hentry">
+			<h1 class="entry-title">Where Clause</h1>
+			<div class="entry-image"><div class="img-placeholder">
+					<a href="img/3.1 where clause.PNG">
+						<img class="zoom" src="img/3.1 where clause.PNG" alt="img-help-autoincrement" style="max-width: 100%" >
+					</a>
+			</div></div>
+			<p>
+					<ol>
+							<ol>
+								<li><a href="img/whereClause/3.1 operator comparsion.PNG">Using comparison operators
+						(=,&gt;,&lt;,.&gt;=,&lt;=,&lt;&gt;) in WHERE clause<br>
+									</a></li>
+								<li><a href="img/whereClause/3.1 operator logical (1).PNG">Using logical operations (AND, OR, NOT) in WHERE clause pic 1
+									<li><a href="img/whereClause/3.1 operator logical (2).PNG">Using logical operations (AND, OR, NOT) in WHERE clause pic 2
+						<br>
+									</a></li>
+								<li><a href="img/whereClause/3.1 using_between.PNG">Using BETWEEN<br>
+									</a></li>
+								<li><a href="img/whereClause/3.1 using-inPNG.PNG">Using IN</a><br>
+								</li>
+								<li><a href="img/whereClause/3.1 sorting order by (1).PNG">Sorting through ORDER BY pic 1</a></li>
+								<li><a href="img/whereClause/3.1 sorting order by (2).PNG">Sorting through ORDER BY pic 2</a></li>
+								<li><a href="img/whereClause/3.1 using like (1).PNG">Using LIKE pic 1</a></li>
+								<li><a href="img/whereClause/3.1 using like (2).PNG">Using LIKE pic 2</a></li>
+								<li><a href="img/whereClause/3.1 regular expression (1).PNG">Using regular expression pic 1</a><br>
+								<li><a href="img/whereClause/3.1 regular expression (2).PNG">Using regular expression pic 2</a>
+									<li><a href="img/whereClause/3.1 regular expression (3).PNG">Using regular expression pic 3</a>
+								<br>
+								</li>
+								<li><a href="img/whereClause/3.1 distinct .PNG">Eliminating dulicates through DISTINCT<br>
+									</a> </li>
+								<li><a href="img/whereClause/3.1 limit .PNG">Limiting results with LIMIT</a><a href="index.html#1.4"><br>
+									</a></li>
+							</ol>
+						</ol>
+			</p>
+		</article>
+	</div>
+	<div id="section13" class="expanding-container">
+			<article class="hentry">
+				<h1 class="entry-title">GROUP BY and HAVING</h1>
+				<div class="entry-image"><div class="img-placeholder">
+						<a href="img/4.1 group create table.PNG">
+							<img class="zoom" src="img/4.1 group create table.PNG" alt="img-help-autoincrement" style="max-width: 100%" >
+						</a>
+				</div></div>
+				<br>
+				<p>
+					<pre>
+	GROUP BY as its name implies, returns group of rows. SQL GROUP BY clause divides a table into sets and it is usually used with SQL aggregate functions which produce summary value for each set. 
+	SQL HAVING clause is a SQL WHERE clause for groups. Just as SQL WHERE clause limits rows, SQL HAVING clause limits groups. In most programming contexts, you will use SQL HAVING clause after SQL GROUP BY clause to limits groups by searched conditions.
+							
+			GROUP BY
+			HAVING
+					</pre>
+					for image having <a href="img/groupHaving/having.PNG">click here</a>
+				</p>
+			</article>
+		</div>
+		<div id="section14" class="expanding-container">
+			<article class="hentry">
+				<h1 class="entry-title">User-defined</h1>
+				<div class="entry-image"><div class="img-placeholder">
+						<a href="img/4.1 group create table.PNG">
+							<img class="zoom" src="img/4.1 group create table.PNG" alt="img-help-autoincrement" style="max-width: 100%" >
+						</a>
+				</div></div>
+				<br>
+				<p>
+						You can store a value in a user-defined variable in one statement and then refer to it later in another statement. This enables you to pass values from one statement to another. User-defined variables are connection-specific. That is, a user variable defined by one client cannot be seen or used by other clients. All variables for a given client connection are automatically freed when that client exits.
+				</p>
+		
+					<ol>
+							<ol>
+								<li><a href="index.html#5.1">Setting a user-defined variable with
+						SET</a></li>
+								<li><a href="#5.2">Setting a user-defined variable with SELECT..
+						INTO statement</a><br>
+								</li>
+							</ol>
+						</ol>
+
+				</p>
+				<hr style="margin-top: 200px" >
+				<p>
+						<h1 class="entry-title">(5.1)  Setting a user-defined variable with SET</h1>
+
+						<table style="width: 100%; text-align: left;" border="1" cellpadding="2" cellspacing="2">
+								<tbody>
+									<tr>
+										<td style="vertical-align: top;">mysql&gt;<span style="font-weight: bold;"> SET @my_var1 = 10, @my_var2 := 20;</span><br>
+							Query OK, 0 rows affected (0.24 sec)<br>
+										<br>
+							mysql&gt; <span style="font-weight: bold;">SELECT @my_var1, @my_var2,
+							@my_var3 := @my_var1 + @my_var2;</span><br>
+							+----------+----------+---------------------------------+<br>
+							| @my_var1 | @my_var2 | @my_var3 := @my_var1 + @my_var2 |<br>
+							+----------+----------+---------------------------------+<br>
+							|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10
+							|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20
+							|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							30 |<br>
+							+----------+----------+---------------------------------+<br>
+							1 row in set (0.05 sec)<br>
+										<br>
+							mysql&gt; <span style="font-weight: bold;">SET @my_string_var = 'Sang
+							Shin';</span><br>
+							Query OK, 0 rows affected (0.00 sec)<br>
+										<br>
+							mysql&gt; <span style="font-weight: bold;">SELECT
+							UPPER(@my_string_var), LOWER(@my_string_var);</span><br>
+							+-----------------------+-----------------------+<br>
+							| UPPER(@my_string_var) | LOWER(@my_string_var) |<br>
+							+-----------------------+-----------------------+<br>
+							| SANG
+							SHIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							| sang
+							shin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							|<br>
+							+-----------------------+-----------------------+<br>
+							1 row in set (0.08 sec)<br>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+						<p>
+								<div class="entry-image"><div class="img-placeholder">
+										<a href="img/userDefined/Setting a user-defined variable with SET.PNG">
+											<img class="zoom" src="img/userDefined/Setting a user-defined variable with SET.PNG" alt="img-help-autoincrement" style="max-width: 100%" >
+										</a>
+										<a href="img/userDefined/Setting a user-defined variable with SET.PNG.PNG">this picture 1</a>
+										<br>
+										<a href="img/userDefined/Setting a user-defined variable with SET (1).PNG">this picture 2</a>
+								</div></div>
+						</p>
+				</p>
+				<hr style="margin-top: 300px">
+<!--ANU
+=================================================================== -->
+				<h1 class="entry-title">(5.2) Setting a user-defined variable with SELECT .. INTO statement</h1>
+
+				<table style="width: 100%; text-align: left;" border="1" cellpadding="2" cellspacing="2">
+						<tbody>
+							<tr>
+								<td style="vertical-align: top;">mysql&gt; <span style="font-weight: bold;">SELECT 67 INTO
+					@my_var4;</span><br>
+					Query OK, 1 row affected (0.06 sec)<br>
+								<br>
+					mysql&gt; <span style="font-weight: bold;">SELECT @my_var4;</span><br>
+					+----------+<br>
+					| @my_var4 |<br>
+					+----------+<br>
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 67 |<br>
+					+----------+<br>
+					1 row in set (0.00 sec)<br>
+								<br>
+					mysql&gt; <span style="font-weight: bold;">SELECT @my_var4 + 10 INTO
+					@my_var5;</span><br>
+					Query OK, 1 row affected (0.00 sec)<br>
+								<br>
+					mysql&gt; <span style="font-weight: bold;">SELECT @my_var4, @my_var5;</span><br>
+					+----------+----------+<br>
+					| @my_var4 | @my_var5 |<br>
+					+----------+----------+<br>
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 67
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 77 |<br>
+					+----------+----------+<br>
+					1 row in set (0.00 sec)<br>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<div class="entry-image"><div class="img-placeholder">
+							<a href="img/userDefined/(5.2) Setting a user-defined variable with SELECT .. INTO statement.PNG">
+								<img class="zoom" src="img/userDefined/Setting a user-defined variable with SET.PNG" alt="img-help-autoincrement" style="max-width: 100%" >
+							</a>
+							<a href="img/userDefined/(5.2) Setting a user-defined variable with SELECT .. INTO statement.PNG.PNG">this picture 2</a>
+							<br>
+							<a href="img/userDefined/(5.2) Setting a user-defined variable with SELECT .. INTO statement (1).PNG">this picture 3</a>
+					</div></div>
+			</article>
+		</div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+	</div>
+</body>
+
+</html>

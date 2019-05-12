@@ -1,0 +1,1019 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500);
+
+html, body{
+  margin: 0;
+  padding: 0;
+  background: #F1f1f1;
+  font-family: 'Roboto';
+      -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#presentation{
+  width: 750px;
+  height: 550px;
+  float: left;
+}
+
+.lock-button{
+  position: absolute;
+  background:  #00bcd4;
+  padding: 4px 8px;
+  margin-top: 26px;
+  right: 0;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  cursor: pointer;
+}
+
+.volumeup{
+  position: absolute;
+  background:  #00bcd4;
+  padding: 4px 8px;
+  cursor: pointer;
+  margin-top: 58px;
+  border-radius: 5px 0 0 5px;
+  left: 26px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.volumedown{
+  position: absolute;
+  background:  #00bcd4;
+  padding: 4px 10.5px;
+  cursor: pointer;
+  margin-top: 110px;
+  border-radius: 5px 0 0 5px;
+  left: 26px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.name{
+  color: #db4437;
+  font-size: 13px;
+  bottom: 0;
+  position: absolute;
+}
+
+#block{
+  width: 400px;
+  height: 350px;
+  margin: auto;
+  position: fixed;
+  left: 180px;
+ /* position: fixed;
+  left: 50px;
+  padding: 50px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
+  margin-top: 75px;
+}
+
+#container{
+  background: url('https://upload.wikimedia.org/wikipedia/commons/a/ac/Nexus_5_Front_View.png');
+  width: 365px;
+  height: 550px;
+  background-size: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 94px;
+  padding-bottom: 0;
+  display: inline-block;
+}
+
+#screen{
+  margin-left: auto;
+  margin-right: auto;
+  width: 233px;
+  height: 415px;
+  position: relative;
+  background: white;
+  padding: 0;
+}
+
+#lockscreen{
+  background: url('http://img.wonderhowto.com/img/72/87/63549145084616/0/download-all-new-android-lollipop-wallpapers-right-now.w654.jpg');
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  filter: brightness(0.8);
+  display: block;
+}
+
+#banner{
+  position: absolute;
+  height: 23px;
+  width: 100%;
+}
+
+.carrier{
+  padding: 8px;
+  margin: 0;
+  position: absolute;
+  color: white;
+  font-size: 9px;
+  cursor: default;
+}
+
+#time-lockscreen{
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  margin-top: 100px;
+  font-weight: 100;
+  font-size: 60px;
+  color: white;
+  cursor: default;
+}
+
+#date{
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: default;
+  position: absolute;
+  margin-top: 170px;
+  font-weight: 300;
+  color: white;
+  font-size: 11px;
+  animation-fill-mode: none;
+}
+
+.wifi{
+  position: absolute;
+  right: 48px;
+  margin-top: 8px;
+  border-top: 10px solid white;
+  border-bottom: 10px solid rgba(0,0,0,0);
+  border-left: 10px solid rgba(0,0,0,0);
+  border-right: 10px solid rgba(0,0,0,0);
+  border-radius: 20px;
+}
+
+.phone-icon{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 10px 10px;
+  border-color: transparent transparent #ffffff transparent;
+  position: absolute;
+  right: 40px;
+  margin-top: 8px;
+}
+
+.profile{
+  border-radius: 50%;
+  width: 15px;
+  position: absolute;
+  margin: 5px;
+  right: 0px;
+}
+
+.battery{
+  width: 7px;
+  height: 10px;
+  position: absolute;
+  right: 19px;
+  background: white;
+  margin: 8px;
+}
+
+.battery::before{
+  content:'';
+  width: 3px;
+  height: 2px;
+  background: white;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: -1px;
+  display: block;
+  position: absolute;
+}
+
+#glass-effect{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 275px 127px 0 0;
+  border-color: rgba(255,255,255,0.1) transparent transparent transparent;
+  position: absolute;
+  z-index: 1;
+}
+
+.lock{
+  width: 9px;
+  height: 7px;
+  position: absolute;
+  border: 2px solid rgba(255,255,255,0.6);
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 3px;
+}
+
+.lock::after{
+  content: '';
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+.lock::before{
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border-top: 2px solid rgba(255,255,255,0.7);
+  border-right: 2px solid rgba(255,255,255,0.6);
+  border-left: 2px solid rgba(255,255,255,0);
+  border-bottom: 2px solid rgba(255,255,255,0);
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: -8px;
+  position: absolute;
+  transform: rotate(-25deg);
+}
+
+
+/*  OLD CSS MADE CAMERA
+
+.camera{
+  width: 14px;
+  height: 10px;
+  background: rgba(255,255,255,0.7);
+  position: absolute;
+  bottom: 10px;
+  right: 7px;
+  border-radius: 2px;
+  z-index: 10;
+}
+
+.camera::before{
+  content:'';
+  display: block;
+  height: 0;
+  width: 4px;
+  margin: -2px 0 0 4px;
+  border-bottom: 2px solid white;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  z-index: 10;
+}
+
+.camera::after{
+  content:'';
+  display: block;
+  z-index: 12;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.6);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}*/
+
+.phone{
+  position: absolute;
+  bottom: 10px;
+  left: 7px;
+  color: rgba(255,255,255,0.7);
+  font-size: 17px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#lockscreen:active > .lock{
+  border: 2px solid white;
+  transition: all 0.2s;
+}
+
+@keyframes date-bounce{
+  20%{transform: scale(1);}
+  60%{transform: scale(0.8); color: rgba(255,255,255,0.9);}
+  82%{transform: scale(1); color: rgba(255,255,255,1);}
+  90%{transform: scale(0.92); }
+  100%{transform: scale(1);}
+}
+
+@keyframes text-bounce{
+  20%{transform: translateY(-25px);}
+  65%{transform: translateY(-40px);}
+  82%{transform: translateY(0px);}
+  90%{transform: translateY(-10px); }
+  100%{transform: translateY(0px);}
+}
+
+
+.run-animation {
+  position: relative;
+  animation: date-bounce .6s linear;
+}
+
+#unlock{
+  position: absolute;
+  color: white;
+  font-size: 8px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  bottom: 38px;
+}
+
+.text-animation{
+    position: relative;
+  animation: text-bounce .6s linear;
+}
+
+#cont{
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  transition: all 0.5s;
+}
+
+@keyframes white-ball{
+  from{transform: scale(0);}
+  to{transform: scale(1);}
+}
+
+.white-select{
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: white;
+  border-radius: 50%;
+  bottom: -20px;
+  display: block;
+  right: -25px;
+  transform: scale(0);
+  transition: all 0.2s;
+  z-index: 1;
+}
+
+@keyframes explosion{
+  20%{
+    transform: scale(1);
+    display: block;
+  }
+  60%{  
+    transform: scale(35);
+  }
+  
+  100%{
+    opacity: 0;
+  }
+}
+
+.white-select::after{
+  content:'<';
+  display: block;
+  color: white;
+  position: absolute;
+  bottom: 28px;
+  right: 80px;
+}
+
+.camera{
+  position: absolute;
+  bottom: 10px;
+  right: 7px;
+  color: rgba(255,255,255,0.7);
+  font-size: 17px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.white-select-left{
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: white;
+  border-radius: 50%;
+  bottom: -20px;
+  left: -22px;
+  transform: scale(0);
+  transition: all 0.2s;
+  z-index: 1;
+}
+
+.white-select-left::after{
+  content:'>';
+  display: block;
+  color: white;
+  position: absolute;
+  bottom: 28px;
+  left: 80px;
+}
+
+#container-guide{
+  width: 275px;
+  height: 450px;
+  position: relative;
+  display: inline-block;
+}
+
+#page{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.box-guide{
+  width: 200px;
+  height: 150px;
+   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  position: absolute;
+  background: white;
+  margin: 14px;
+  margin-top: 0;
+  border-radius: 3px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.box-guide:hover{
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  transition: all 0.3s;
+}
+
+.green{
+  background: #009688;
+  margin-top: 175px;
+}
+
+.lime{
+  background: #cddc39;
+}
+
+.blue{
+  background:  #607d8b;
+  margin-top: 350px;
+}
+
+.red{
+  background: #f44336;
+  margin-top: 175px;
+}
+
+.amber{
+  background: #ffc107;
+}
+
+.cyan{
+  background: #03a9f4;
+  margin-top: 350px;
+}
+
+.head-box{
+  width: 100%;
+  height: 40px;
+  background: rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.icon-guide{
+  padding: 0;
+  position: absolute;
+  line-height: 40px;
+  text-align: center;
+  left: 0;
+  margin: auto;
+  right: 0;
+}
+
+.title-box{
+  color: #222;
+  font-weight: 500;
+  font-size: 21px;
+}
+
+.desc-box{
+  color: #444;
+}
+
+
+/* LAUNCHER */
+
+#launcher{
+  display: none;
+  z-index: 1;
+  background: url('http://img.wonderhowto.com/img/72/87/63549145084616/0/download-all-new-android-lollipop-wallpapers-right-now.w654.jpg');
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#slide-in{
+   transform: translateY(0px);
+    transition: all 0.5s;
+  height: 100%;
+  width: 100%;
+}
+
+#time{
+  right: 0;
+  position: absolute;
+  margin-top: 4px;
+  right: 2px;
+  font-weight: 300;
+  font-size: 9px;
+  color: white;
+  cursor: default;
+}
+
+.main-banner{
+  margin-top: 4px;
+}
+
+#navigation-bar{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 28px;
+}
+
+
+.back{
+  position: absolute;
+  height: 10px;
+  border-right: 1px solid white;
+  left: 55px;
+  top: 0;
+  bottom: 0;
+  margin: auto; 
+}
+
+.back::before{
+  content: '';
+  width: 9px;
+  border-bottom: 1px solid white;
+  margin-top: 2px;
+  position: absolute;
+  right: -1px;
+  display: block;
+  transform: rotate(-30deg);
+}
+
+
+.back::after{
+  content: '';
+  width: 9px;
+  border-top: 1px solid white;
+  display: block;
+  right: -1px;
+  transform: rotate(30deg);
+  margin-top: 7px;
+  position: absolute;
+}
+
+.home{
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.recent{
+  margin: auto;
+  right: 47px;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  border: 1px solid white;
+}
+
+.other{
+  display: none;
+}
+
+
+#drawer-bar{
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  bottom: 28px;
+}
+
+.drawer-icon{
+  background-image: url(http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/48/Drawer-icon.png);
+  background-size: 100%;
+  width: 37px;
+  height: 37px;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  transform-origin: bottom;
+}
+
+.drawer-z{
+  width: 37px;
+  height: 37px;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 0;
+  transform-origin: bottom;
+  z-index: 1;
+}
+
+#drawer{
+  width: 218px;
+  height: 350px;
+  overflow: hidden;
+  margin: auto;
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: 25px;
+  border-radius: 3px;
+}
+
+@keyframes drawer{
+  20%{
+    transform: scale(8);
+  }
+  
+  40%{
+    transform: scale(20);
+    border-radius: 30%;
+  }
+  
+  70%{
+    border-radius: 10%;
+    transform: scale(20);
+  }
+  
+  100%{
+    border-radius: 5px;
+    transform: scale(20);
+  }
+}
+
+
+@keyframes drawer-reverse{
+  0%{
+    border-radius: 5px;
+    transform: scale(20);
+  }
+  
+  99%{
+    border-radius: 50%;
+    transform: scale(1);
+    background: white;
+  }
+  
+  100%{
+    border-radius: 50%;
+    transform: scale(1);
+    background: none;
+  }
+}
+
+#info{
+  width: 530px;
+  height: 40px;
+  position: relative;
+  margin: auto;
+  background: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 3px;
+}
+
+a:visited, a:link{
+  text-decoration: none;
+  color: #555;
+}
+
+.name{
+  color: #db4437 !important;
+  font-weight: 500;
+}
+
+.firma{
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  line-height: 40px;
+}
+
+a:hover{
+  color: #f44336;
+}
+
+
+//PROFILE CARD
+
+$transition: all 0.3s;
+$shadow-L1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$shadow-L2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$shadow-L3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+body{
+  background: #eceff1;
+}
+
+#container-a{
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  overflow: hidden;
+  transition: $transition;
+  box-shadow: $shadow-L3;
+      
+  /*&:hover{
+    width: 150px;
+    border-radius: 50px;
+    transition: $transition;
+  }*/
+  
+  #badge{
+  width: 100%;
+  height: 100%;
+  background-image: url("https://lh3.googleusercontent.com/-X-aQXHatDQY/Uy86XLOyEdI/AAAAAAAAAF0/TBEZvkCnLVE/w140-h140-p/fb3a11ae-1fb4-4c31-b2b9-bf0cfa835c27"); 
+  background-size: 100%;
+  transition: $transition;
+  position: absolute;
+  
+  
+    &:hover .codepen{
+     display: block;
+    }
+  }
+  
+  &:hover #letter{
+      display: block;
+  }
+  
+  &:hover #badge{
+    width: 150px;
+    height: 150px;
+    transition: $transition;
+    filter: blur(7px);
+  } 
+ 
+  #letter{
+    display: none;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    
+    span{
+      font-family: 'Roboto';
+      font-size: 32px;
+      color: white;
+      text-align: center;
+      line-height: 60px;
+      margin: auto;
+      left: 0;
+      right: 0;
+      position: absolute;
+      cursor: pointer;
+    }
+  }
+}
+
+
+#container-floating{
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  top: 20px;
+  right: 20px;
+  z-index: 50px;
+  
+  &:hover{
+    height: 400px;
+    width: 60px;
+    top: 20px;
+    right: 20px;
+  }
+  
+  &:hover .nds{
+    animation: bounce-nds 0.1s linear;
+    animation-fill-mode:  forwards;
+  }
+  &:hover .nd3{
+    animation-delay: 0.08s;
+  }
+  &:hover .nd4{
+    animation-delay: 0.15s;
+  }
+  &:hover .nd5{
+    animation-delay: 0.2s;
+  }
+  
+  .nds{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 300;
+    transform:  scale(0);
+    right: 33px;
+    cursor: pointer;
+    &:hover{
+      box-shadow: $shadow-L3;
+      transition: $transition;
+      width: 50px;
+      right: 25px;
+      height: 50px;
+    }
+  }
+
+  .nd1{
+    background-image: url("https://blog.codepen.io/wp-content/uploads/2012/06/Button-Fill-Black-Large.png");
+    background-size: 100%;
+    top: 110px;
+    animation-delay: 0.1s;
+    animation: bounce-out-nds 0.3s linear;
+    animation-fill-mode:  forwards;
+    box-shadow: $shadow-L2;
+    transition: $transition;
+  }
+
+  .nd3{
+    background: url("https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-512.png");
+    background-size: 100%;
+    top: 165px;
+    animation-delay: 0.15s;
+    animation: bounce-out-nds 0.15s linear;
+    animation-fill-mode:  forwards;
+    box-shadow: $shadow-L2;
+    transition: $transition;
+  }
+
+  .nd4{
+    background: url("http://www.studiotomasi.org/images/gplusicon.svg");
+    background-size: 100%;
+    top: 225px;
+    animation-delay: 0.1s;
+    animation: bounce-out-nds 0.1s linear;
+    animation-fill-mode:  forwards;
+    box-shadow: $shadow-L2;
+    transition: $transition;
+  }
+  
+}
+
+
+@keyframes bounce-nds{
+    from {opacity: 0;}
+    to {opacity: 1; transform: scale(1);}
+}
+
+@keyframes bounce-out-nds{
+    from {opacity: 1; transform: scale(1);}
+    to {opacity: 0; transform: scale(0);}
+}
+
+
+.profile-name{
+    line-height: 60px;
+    left: -70px;
+    position: absolute;
+    font-family: 'Roboto';
+    color: #455a64;
+}
+
+.profile-name:hover{
+  text-decoration: underline;
+}
+
+a:link, a:visited{
+  text-decoration: none;
+}
+
+
+#container-volume{
+  position: absolute;
+  width: 95%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: #455a64;
+  top: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.19), 0 1px 2px rgba(0,0,0,0.24);     
+  z-index: 100;
+  display: none;
+}
+
+
+#myRange{
+  width: 130px;
+  margin-top: 17px;
+}
+
+input[type=range]::-moz-range-track {
+    width: 130px;
+    height: 1px;
+    background: #80cbc4;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    background: #80cbc4;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+
+
+
+/*    INPUT RANGE WEBKIT VERSION
+
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+    margin-top: -4px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+*/
+
+.ring{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  line-height: 50px;
+  left: 15px;
+}
+

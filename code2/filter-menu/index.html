@@ -1,0 +1,489 @@
+a<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>yoChat Polnes Update</title>
+<link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700,900" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/css/demo.css'>
+
+      <link rel="stylesheet" href="css/style_2.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style_1.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+<link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      html {/*
+  background: url(https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/bg.jpg) no-repeat center center fixed;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  font: 300 14px/18px Roboto
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box
+}
+
+.clearfix:after,
+.clearfix:before {
+  content: '';
+  display: table
+}
+
+.clearfix:after {
+  clear: both;
+  display: block
+}
+
+.muck-up {
+  width: 310px;
+  height: 545px;
+  margin: 5em auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  /*background: url(https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/header.jpg) no-repeat top /contain;*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.overlay:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(71, 32, 84, 0.5);
+}
+
+.muck-up > .top {
+  position: relative;
+  min-height: 240px;
+  padding: 15px;
+  color: #fff;
+}
+
+.top .nav span {
+  float: left;
+  display: block;
+}
+
+.nav p {
+  margin-top: 2px;
+  display: inline-block;
+  float: left;
+  vertical-align: bottom;
+}
+
+.ion-android-menu {
+  font-size: 24px;
+  margin-right: 17px;
+}
+
+.nav .ion-ios-more-outline {
+  font-size: 38px;
+  float: right !important;
+}
+
+.user-profile {
+  margin-top: 90px;
+}
+
+.user-profile img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 24px;
+}
+
+.user-details p {
+  font-size: 11px;
+}
+
+.user-details {
+  float: left;
+  margin-top: 5px;
+  vertical-align: bottom;
+}
+
+.user-details h4 {
+  font-size: 18px;
+}
+
+.filter-btn {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.filter-btn span {
+  width: 40px;
+  height: 40px;
+  background: #FA396B;
+  display: block;
+  position: absolute;
+  right: 25px;
+  top: -46px;
+  text-align: center;
+  color: #fff;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 22px;
+  z-index: 999;
+}
+span.toggle-btn.ion-android-funnel:hover{
+      cursor: pointer;
+}
+.filter-btn a {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  right: 25px;
+  display: block;
+  top: -46px;
+  color: #fff;
+  z-index: 99;
+  font-size: 22px;
+  transition: all .4s cubic-bezier(.68, 1, .265, 1)
+}
+
+.filter-btn:after {
+  height: 170px;
+  width: 170px;
+  content: '"\f38b"';
+  background-color: #FA396B;
+  position: absolute;
+  top: -110px;
+  right: -40px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.filter-btn.open span.toggle-btn.ion-android-funnel {
+  background-color: #DE3963;
+}
+
+.filter-btn.open .ion-android-funnel:before {
+  content: "\f2d7";
+}
+
+.open:after {
+  transform: scale(1);
+}
+
+.filter-btn.open a:nth-child(1) {
+  transform: translate(9px, -62px);
+}
+
+.filter-btn.open a:nth-child(2) {
+  transform: translate(-50px, -34px);
+}
+
+.filter-btn.open a:nth-child(3) {
+  transform: translate(-56px, 25px);
+}
+
+.filter-btn.open a:nth-child(4) {
+  transform: translate(5px, 61px);
+}
+
+.muck-up .bottom {
+  background-color: #fff;
+  min-height: 303px;
+  z-index: 1;
+  padding: 35px;
+  position: relative;
+  color: #222;
+  padding-top: 0px;
+}
+
+.bottom:after {
+  content: '';
+  position: absolute;
+  top: -46px;
+  background: #fff;
+  left: -22px;
+  right: 0;
+  height: 100px;
+  transform: rotate(10deg);
+  width: 337px;
+  z-index: -1;
+}
+
+.bottom .title {
+  margin-bottom: 20px;
+}
+
+.bottom .title h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.title small {
+  font-size: 10px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+ul.tasks .task-title {
+  font-size: 13px;
+  display: inline-block;
+}
+
+ul.tasks .task-time {
+  float: right;
+  font-size: 10px;
+  color: #888;
+}
+
+ul.tasks .task-cat {
+  font-size: 10px;
+  display: block;
+  color: #888;
+}
+
+ul.tasks li {
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 8;
+}
+
+ul.tasks li:after {
+  content: '';
+  position: absolute;
+  left: -18px;
+  top: 8px;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+}
+
+ul.tasks li.red:after {
+  background: #FF3163;
+}
+
+ul.tasks li.green:after {
+  background: #54D6C7;
+}
+
+ul.tasks li.yellow:after {
+  background: #EAB429;
+}
+
+ul.tasks::after {
+  content: '';
+  position: absolute;
+  height: 400px;
+  width: 1px;
+  background: #eee;
+  left: 20px;
+  top: -68px;
+}
+
+ul li.hang {
+  margin-bottom: 48px;
+}
+
+ul li.hang img {
+  float: left;
+  height: 20ox;
+  width: 20px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+ <div id="large-header" class="large-header">
+  <canvas id="demo-canvas"></canvas>
+    <h1 class="main-title">Connect <span class="thin">Three</span>
+  
+<div class="muck-up">
+  <div class="overlay"></div>
+  <div class="top">
+    <div class="nav">
+      <span class="ion-android-menu"></span>
+      <p>Timeline</p>
+      <span class="ion-ios-more-outline"></span>
+    </div>
+    <div class="user-profile">
+      <img src="https://scode.id/polnes/profile_logo_.jpg">
+      <div class="user-details">
+        <h4>Yogi Arif Widodo</h4>
+        <p>Android Developer</p>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="filter-btn">
+    <a id="one" href="#"><i class="ion-ios-checkmark-outline"></i></a>
+    <a id="two" href="#"><i class="ion-ios-alarm-outline"></i></a>
+    <a id="three" href="#"><i class="ion-ios-heart-outline"></i></a>
+    <a id="all" href="#"><i class="ion-ios-star-outline"></i></a>
+    <span class="toggle-btn ion-android-funnel"></span>
+  </div>
+  <div class="clearfix"></div>
+  <div class="bottom">
+    <div class="title">
+      <h3>yoChat Polnes</h3>
+      <small>DOWNLOAD</small>
+    </div>
+    <ul class="tasks">
+      <li class="one red">
+
+        <span class="task-title">yoChat v.2.5</span>
+        <span class="task-time">11am</span>
+        <span class="task-cat"><a href="https://scode.id/yogi/yoChat%20v.2.5.apk"style="color: #cc0000">download now </a><span class="tooltip-toggle" aria-label="Fix Bug Blank Chat and Repair Flow Register" tabindex="0">
+          <svg viewBox="0 0 27 27" xmlns="http://www.w3.org/2000/svg"><g fill="#ED3E44" fill-rule="evenodd"><path d="M13.5 27C20.956 27 27 20.956 27 13.5S20.956 0 13.5 0 0 6.044 0 13.5 6.044 27 13.5 27zm0-2C7.15 25 2 19.85 2 13.5S7.15 2 13.5 2 25 7.15 25 13.5 19.85 25 13.5 25z"/><path d="M12.05 7.64c0-.228.04-.423.12-.585.077-.163.185-.295.32-.397.138-.102.298-.177.48-.227.184-.048.383-.073.598-.073.203 0 .398.025.584.074.186.05.35.126.488.228.14.102.252.234.336.397.084.162.127.357.127.584 0 .22-.043.412-.127.574-.084.163-.196.297-.336.4-.14.106-.302.185-.488.237-.186.053-.38.08-.584.08-.215 0-.414-.027-.597-.08-.182-.05-.342-.13-.48-.235-.135-.104-.243-.238-.32-.4-.08-.163-.12-.355-.12-.576zm-1.02 11.517c.134 0 .275-.013.424-.04.148-.025.284-.08.41-.16.124-.082.23-.198.313-.35.085-.15.127-.354.127-.61v-5.423c0-.238-.042-.43-.127-.57-.084-.144-.19-.254-.318-.332-.13-.08-.267-.13-.415-.153-.148-.024-.286-.036-.414-.036h-.21v-.95h4.195v7.463c0 .256.043.46.127.61.084.152.19.268.314.35.125.08.263.135.414.16.15.027.29.04.418.04h.21v.95H10.82v-.95h.21z"/></g></svg>
+        </span> </span>
+
+      </li>
+      <li class="one red">
+        <span class="task-title">yoChat v.2.0</span>
+        <span class="task-time">3pm</span>
+        <span class="task-cat"><a href="https://scode.id/yogi/yoChat%20v.2.0.apk"style="color: #cc0000">download now </a><span class="tooltip-toggle" aria-label="Fixed Relogin and Register Failed, Added Token Feature" tabindex="0">
+          <svg viewBox="0 0 27 27" xmlns="http://www.w3.org/2000/svg"><g fill="#ED3E44" fill-rule="evenodd"><path d="M13.5 27C20.956 27 27 20.956 27 13.5S20.956 0 13.5 0 0 6.044 0 13.5 6.044 27 13.5 27zm0-2C7.15 25 2 19.85 2 13.5S7.15 2 13.5 2 25 7.15 25 13.5 19.85 25 13.5 25z"/><path d="M12.05 7.64c0-.228.04-.423.12-.585.077-.163.185-.295.32-.397.138-.102.298-.177.48-.227.184-.048.383-.073.598-.073.203 0 .398.025.584.074.186.05.35.126.488.228.14.102.252.234.336.397.084.162.127.357.127.584 0 .22-.043.412-.127.574-.084.163-.196.297-.336.4-.14.106-.302.185-.488.237-.186.053-.38.08-.584.08-.215 0-.414-.027-.597-.08-.182-.05-.342-.13-.48-.235-.135-.104-.243-.238-.32-.4-.08-.163-.12-.355-.12-.576zm-1.02 11.517c.134 0 .275-.013.424-.04.148-.025.284-.08.41-.16.124-.082.23-.198.313-.35.085-.15.127-.354.127-.61v-5.423c0-.238-.042-.43-.127-.57-.084-.144-.19-.254-.318-.332-.13-.08-.267-.13-.415-.153-.148-.024-.286-.036-.414-.036h-.21v-.95h4.195v7.463c0 .256.043.46.127.61.084.152.19.268.314.35.125.08.263.135.414.16.15.027.29.04.418.04h.21v.95H10.82v-.95h.21z"/></g></svg>
+        </span></span>
+
+      </li>
+      <li class="two green">
+        <span class="task-title">yoChat v.1.5</span>
+        <span class="task-time">2pm</span>
+        <span class="task-cat"><a href="https://scode.id/yogi/yoChat%20v.1.5.apk"style="color: #cc0000">download now </a><span class="tooltip-toggle" aria-label="Fix Cache Page Load" tabindex="0">
+          <svg viewBox="0 0 27 27" xmlns="http://www.w3.org/2000/svg"><g fill="#ED3E44" fill-rule="evenodd"><path d="M13.5 27C20.956 27 27 20.956 27 13.5S20.956 0 13.5 0 0 6.044 0 13.5 6.044 27 13.5 27zm0-2C7.15 25 2 19.85 2 13.5S7.15 2 13.5 2 25 7.15 25 13.5 19.85 25 13.5 25z"/><path d="M12.05 7.64c0-.228.04-.423.12-.585.077-.163.185-.295.32-.397.138-.102.298-.177.48-.227.184-.048.383-.073.598-.073.203 0 .398.025.584.074.186.05.35.126.488.228.14.102.252.234.336.397.084.162.127.357.127.584 0 .22-.043.412-.127.574-.084.163-.196.297-.336.4-.14.106-.302.185-.488.237-.186.053-.38.08-.584.08-.215 0-.414-.027-.597-.08-.182-.05-.342-.13-.48-.235-.135-.104-.243-.238-.32-.4-.08-.163-.12-.355-.12-.576zm-1.02 11.517c.134 0 .275-.013.424-.04.148-.025.284-.08.41-.16.124-.082.23-.198.313-.35.085-.15.127-.354.127-.61v-5.423c0-.238-.042-.43-.127-.57-.084-.144-.19-.254-.318-.332-.13-.08-.267-.13-.415-.153-.148-.024-.286-.036-.414-.036h-.21v-.95h4.195v7.463c0 .256.043.46.127.61.084.152.19.268.314.35.125.08.263.135.414.16.15.027.29.04.418.04h.21v.95H10.82v-.95h.21z"/></g></svg>
+        </span></span>
+
+      </li>
+      </li>
+      <li class="tow green hang">
+        <span class="task-title">Recruitment Team</span>
+        <span class="task-time">2pm</span>
+        <span class="task-cat">Hangouts</span>
+        <img src="https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/2.jpg">
+        <img src="https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/3.jpg">
+        <img src="https://scode.id/polnes/profile_logo_.jpg">
+      </li>
+      <li class="three yellow">
+        <span class="task-title">New Feature</span>
+        <span class="task-time">2pm</span>
+        <span class="task-cat">Starting</span>
+
+
+      </li>
+
+      <li class="three yellow">
+        <span class="task-title">Lunch Alone</span>
+        <span class="task-time">2pm</span>
+        <span class="task-cat">Behind House</span>
+      </li>
+      <li class="three yellow">
+        <span class="task-title">Team Meeting</span>
+        <span class="task-time">2pm</span>
+        <span class="task-cat">Hangouts</span>
+      </li>
+
+    </ul>
+  </div>
+</div>
+</h1>
+</div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+<div style="text-align:center;margin-top:25px;font-weight:bold;texxxt-decoration:none;">
+  Thanks For <a href="#" px;target="_blank">themeshook</a><p><hr><p> CountDown | Release On :
+<p id="demo" style="background-image: -moz-linear-gradient(top,#b8b0af 0%,#f2ecea 100%);
+background-image: -webkit-linear-gradient(top,#b8b0af 0%,#f2ecea 100%);
+background-image: -o-linear-gradient(top,#b8b0af 0%,#f2ecea 100%);
+background-image: -ms-linear-gradient(top,#b8b0af 0%,#f2ecea 100%);
+background-image: linear-gradient(top,#b8b0af 0%,#f2ecea 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+position:relative;font-size:1.2em;font-family: 'Yantramanav', sans-serif;font-weight:900;text-align: center;
+
+"></p>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("September 30, 2018 12:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</div>
+
+<script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js'></script>
+<script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js'></script>
+<script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/TweenLite.min.js'></script>
+
+  
+
+    <script  src="js/index_2.js"></script>
+
+</body>
+
+</html>
